@@ -49,7 +49,7 @@ const CustomTextarea: FC<Props> = ({
                   onChange={(val) => {
                     onChange(val);
                   }}
-                  rows={4}
+                  rows={6}
                   placeholder={placeholder}
                   disabled={isDisabled}
                   defaultValue={defaultValue}

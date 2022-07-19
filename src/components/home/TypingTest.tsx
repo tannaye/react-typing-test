@@ -36,7 +36,7 @@ const TypingTest: FC<Props> = (props): JSX.Element => {
       handleSubmit(onSubmit)();
       setTestSubmitted(true);
     }
-  }, []);
+  });
 
   const closeModal = () => {
     setModalIsOpen(false);
@@ -81,7 +81,7 @@ const TypingTest: FC<Props> = (props): JSX.Element => {
                 control={control}
                 name={"answer"}
                 id={"answer"}
-                label={"Retype the paragraph above"}
+                label={"Retype the paragraph above before the time runs out"}
                 placeholder={"please retype the paragraph above here"}
                 isRequired={true}
                 errors={errors}

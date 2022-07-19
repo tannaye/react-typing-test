@@ -24,9 +24,12 @@ const CountDownTimer = ({ duration, setDuration }) => {
   return (
     <>
       <div className="">
-        <p className="">
+        <p className="black-text">
           {" "}
-          Test ends in {mins}:{secs} mins
+          Test ends in{" "}
+          {`min${mins === 1 ? "" : "s"}:${mins} sec${
+            secs === 1 ? "" : "s"
+          }:${secs}`}
         </p>
       </div>
     </>

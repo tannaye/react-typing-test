@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
+
+:root {
+  --custom-primary: #3ab44a;
+  --custom-light-green: #f0fdf4;
+  --custom-lemon-green: #86efac;
+
+  /* white  */
+  --custom-white: #fff;
+
+  /* black */
+  --custom-black: #374151;
+  --custom-text-black: #111827;
+  --custom-bg-black: #212525;
+
+  /* grey */
+  --custom-border-grey: #d1d5db;
+  --custom-text-grey: #6b7280;
+  --custom-bg-grey: #f3f4f6;
+
+  /* red  */
+  --custom-red: #dc2626;
+}
+
+/***** backgrounds ******/
+/* green */
+.bg-green {
+  background-color: var(--custom-primary) !important;
+}
+
+.bg-grey {
+  background-color: var(--custom-bg-grey) !important;
+}
+
+/***** text classes  ******/
+.white-text {
+  color: var(--custom-white) !important;
+  font-family: "inter" !important;
+}
+
+.black-text {
+  color: var(--custom-black) !important;
+  font-family: "inter" !important;
+}
+
+.grey-text {
+  color: var(--custom-text-grey) !important;
+  font-family: "inter" !important;
+}
+
+.error-text {
+  color: var(--custom-red) !important;
+  font-family: "inter" !important;
+}
+
+.unselectable {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.content-scroll {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 30vh;
+}
+
+@media screen and (max-width: 768px) {
+  .content-scroll {
+    height: 50vh;
+  }
+}

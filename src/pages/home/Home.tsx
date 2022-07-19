@@ -12,7 +12,9 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      {/* <h1 className="text-2xl font-bold">Welcome to Tannaye typing test</h1> */}
+      <h1 className="text-2xl font-bold text-center black-text uppercase mt-10">
+        Typing challenge
+      </h1>
       {activeComponent === "settings" ? (
         <Settings
           setParagraph={setParagraph}

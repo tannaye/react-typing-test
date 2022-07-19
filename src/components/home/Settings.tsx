@@ -45,7 +45,7 @@ const Settings: FC<Props> = (props): JSX.Element => {
   return (
     <>
       <div className="container mx-auto h-fit w-full max-width">
-        <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-4 mt-40 items-center">
+        <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-4 mt-20 items-center">
           <div className="lg:block hidden">
             <img
               src={TypingPana}

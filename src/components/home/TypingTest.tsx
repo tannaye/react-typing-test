@@ -23,6 +23,8 @@ const TypingTest: FC<Props> = (props): JSX.Element => {
     props;
   const [score, setScore] = useState(0);
   const [total, setTotal] = useState(0);
+  const [correctWords, setCorrectWords] = useState([]);
+  const [incorrectWords, setIncorrectWords] = useState([]);
 
   const {
     handleSubmit,
@@ -45,15 +47,24 @@ const TypingTest: FC<Props> = (props): JSX.Element => {
 
   const onSubmit = (data) => {
     let words = paragraph.split(" ");
-    let correct = 0;
-    let answer = data.answer.split(" ");
 
-    for (let i = 0; i < words.length; i++) {
-      if (words[i] === answer[i]) {
-        correct++;
+    let answer = data.answer.split(" ");
+    let correctWords_ = [];
+    let incorrectWords_ = [];
+
+    words.map((word: string, index: number) => {
+      if (word === answer[index]) {
+        // @ts-ignore
+        correctWords_.push(word);
+      } else {
+        // @ts-ignore
+        incorrectWords_.push(word);
       }
-    }
-    setScore(correct);
+    });
+
+    setCorrectWords(correctWords_);
+    setIncorrectWords(incorrectWords_);
+    setScore(correctWords_.length);
     setTotal(words.length);
     setModalIsOpen(true);
   };
@@ -118,6 +129,8 @@ const TypingTest: FC<Props> = (props): JSX.Element => {
         score={score}
         total={total}
         username={username}
+        correctWords={correctWords}
+        incorrectWords={incorrectWords}
       />
     </>
   );

@@ -28,10 +28,20 @@ interface Props {
   score: number;
   total: number;
   username: string;
+  correctWords: string[];
+  incorrectWords: string[];
 }
 
 const SuccessModal: FC<Props> = (props: any): JSX.Element => {
-  const { modalIsOpen, closeModal, score, total, username } = props;
+  const {
+    modalIsOpen,
+    closeModal,
+    score,
+    total,
+    username,
+    correctWords,
+    incorrectWords,
+  } = props;
 
   return (
     <>
@@ -51,10 +61,24 @@ const SuccessModal: FC<Props> = (props: any): JSX.Element => {
           <img src={success} alt="" width={125} className="mx-auto" />
 
           <div className="text-center">
-            <p className="text-2xl black-text font-semibold mb-3">Successful</p>
+            <p className="text-2xl black-text font-semibold mb-3">Test Ended</p>
             <p className="text-sm grey-text font-medium mb-3">
               Hello {username}, thanks for completing the test successfully. You
               scored {score} out of {total} words.
+            </p>
+            <p className="text-sm grey-text font-medium mb-3">
+              Correct words :{" "}
+              <span className="green-text">
+                {" "}
+                {correctWords.map((word: string) => word + " ")}
+              </span>
+            </p>
+
+            <p className="text-sm grey-text font-medium mb-3">
+              Incorrect words :{" "}
+              <span className="error-text">
+                {incorrectWords.map((word: string) => word + " ")}
+              </span>
             </p>
           </div>
 
@@ -62,7 +86,7 @@ const SuccessModal: FC<Props> = (props: any): JSX.Element => {
             className="mx-auto bg-green py-3 px-5 rounded my-3 cursor-pointer"
             onClick={() => closeModal()}
           >
-            <p className="text-sm font-semibold white-text">New Test</p>
+            <p className="text-sm font-semibold white-text">Try again</p>
           </div>
         </div>
       </Modal>
